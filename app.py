@@ -54,5 +54,9 @@ def greetings(name):
 greetings("Rose")
 #changing global variable using the local scope ==> use the global keyword 
 change_the_world="Change yourself"
-def change_yourself
-
+def change_yourself():
+    global change_the_world  #using the global keyword to change the global variable
+    change_the_world="World changed"
+    return change_the_world
+#change_yourself()
+print("Change yourself is now equal to:", change_yourself())
