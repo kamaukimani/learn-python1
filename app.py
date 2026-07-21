@@ -60,3 +60,52 @@ def change_yourself():
     return change_the_world
 #change_yourself()
 print("Change yourself is now equal to:", change_yourself())
+#conditional rendering using if/else
+def call_dog(dog):
+
+    if dog=="hungry":
+        owner="Reffiling food bowl"
+    elif dog=="thirsty":
+        owner="Reffiling water bowl"
+    elif dog=="playful":
+        owner="Playing tug-of-war"
+    elif dog=="cuddly":
+        owner="Snuggling"
+    else:
+        owner="Reading newspaper"
+    return owner
+
+print(f"The dog owner is:{call_dog('thirsty')}")
+
+#usong ternary operator in python
+age=20
+is_adult="Adult" if age>17 else "A baby"
+print (is_adult)
+
+def divide():
+    try:
+        age=int(input("Enter age: "))
+        is_even="even" if age%2 ==0 else "not even"    
+    except ValueError:
+        print("Enter a number greater than zero")
+    except ZeroDivisionError:
+        print("You can not divide age by zero")
+    else:
+
+        print(f"After getting the modulus {age} is: {is_even}")
+    finally:
+        print("Program ended successfully")
+    return is_even
+
+#print(divide())
+def dictionary_mapping(dog):
+    dict_map={
+        "cuddy":"Snuggling",
+        "hungry":"Reffiling food bowl",
+        "thirsty":"Reffiling water bowl",
+        "playful":"Playing tug-of-war"
+    }
+    owner=dict_map.get(dog,"Reading newspaper")
+    return owner
+# print(f"The dog owner is: {dictionary_mapping('thirsty')}")
+print(f"The dog owner is: {dictionary_mapping('fighting')}")
