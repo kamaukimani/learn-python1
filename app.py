@@ -140,3 +140,46 @@ def fizzbuzz():
         else:
             print(i)
 fizzbuzz()
+# functions as first class objects
+def hello():
+    print(f"Hello from the outer function")
+
+    def greet():
+        print(f"Hello from the inner function")
+    return greet
+hello()
+hello()()
+def salutation(func):
+    return func()
+salutation(hello())
+def decorator(func):
+    def wrapper():
+        print("I am the output that lets you know the function is about to be called")
+        func()
+        print("I am the output that lets you know the function has been called")
+    return wrapper
+@decorator
+def get_called():
+    print("I am the function and i am being called")
+get_called()
+# decorator(get_called)()
+def check_working_hours(func):
+    def wrapper(time):
+        if 1100< time <2100:
+            func(time)
+        else:
+            print("I'm off duty")
+    return wrapper
+@check_working_hours
+def sweep_floors(time):
+    print("Sweeping the floors")
+@check_working_hours
+def wash_dishes(time):
+    print("Washing the dishes")
+def chop_vegetables(time):
+    print("Chopping the vegetables")
+
+sweep_floors(1300) # @pie_syntax
+wash_dishes(1000) # @pie_syntax
+check_working_hours(chop_vegetables(1600))  # a function_call()
+#ways of calling a decorator ==> a) A function_call() and @pie_syntax
