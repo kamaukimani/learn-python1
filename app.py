@@ -109,3 +109,34 @@ def dictionary_mapping(dog):
     return owner
 # print(f"The dog owner is: {dictionary_mapping('thirsty')}")
 print(f"The dog owner is: {dictionary_mapping('fighting')}")
+
+#loops 
+i=0
+while i<10:
+    print(f"Looping: {i}")
+    i+=1
+for a in range(10):
+    print(f"The value of a is: {a}")
+def happy_new_year():
+    countdown=10
+    while countdown>0:
+        print(countdown)
+        countdown -=1
+    print("Happy new year!!!!")
+happy_new_year()
+
+def square_integers(int_list):
+    return [integer**2 for integer in int_list]
+print(square_integers([1,2,3,4,5]))
+
+def fizzbuzz():
+    for i in range(1,101,1):
+        if not i%15:
+            print("FizzBuzz")
+        elif not i%5:
+            print("Fizz")
+        elif not i%3:
+            print("Buzz")
+        else:
+            print(i)
+fizzbuzz()
