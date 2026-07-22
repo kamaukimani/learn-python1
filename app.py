@@ -183,3 +183,18 @@ sweep_floors(1300) # @pie_syntax
 wash_dishes(1000) # @pie_syntax
 check_working_hours(chop_vegetables(1600))  # a function_call()
 #ways of calling a decorator ==> a) A function_call() and @pie_syntax
+
+#fobonacci
+def fibonacci(length):
+    fib_seq=[]
+    if length >0:
+        fib_seq.append(0)
+    if length>=2:
+        fib_seq.append(1)
+    for i in range(2,length):
+        fib_seq.append(fib_seq[-1]+fib_seq[-2])
+    print(fib_seq)
+fibonacci(10)
+
+
+
