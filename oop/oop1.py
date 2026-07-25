@@ -30,3 +30,12 @@ fido1=Dog1("Fido")
 print(fido1.name)
 fido1.bark()
 print(fido1.breed)
+
+class Check:
+    def __inti__(self):
+        print("Cheking what self is ")
+    def check_self(self):
+        return self 
+checking=Check()
+print(checking)
+print(checking.check_self())
