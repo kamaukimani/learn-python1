@@ -29,4 +29,51 @@ class Dog:
 fido=Dog("Fido","Beagle")
 figo=Dog("sdsdjksdjkkksjksdjksdjksdjksd")
 tiger=Dog("Tiger","Kiniuru")
-        
+
+#include the deleter decorator
+class Dog1:
+    def __init__(self,name):
+        self.name=name
+    @property
+    def name(self):
+        """The name property"""
+        return self._name
+    @name.setter
+    def name(self,name):
+        if isinstance(name,str) and 1<= len(name) <= 25:
+            print(f"Setting name to: {name}")
+            self._name=name
+        else:
+            raise ValueError(f"{name} <== must be a string of between 1 and 25 characters")
+    @name.deleter
+    def name(self):
+        """prevent users from deleting a dogs name."""
+        raise AttributeError("Name can not be deleted")
+
+dog=Dog1("Fido")
+#del dog.name
+print(dog.name)
+buddy=Dog1("Buddy")
+
+#delete the dog using the deleter decorator
+class Dog2:
+    def __init__(self,name):
+        self.name=name
+    @property
+    def name(self):
+        """The name property"""
+        return self._name
+    @name.setter
+    def name(self,name):
+        if type(name) is str:
+            self._name=name
+        else:
+            raise ValueError(f"{name} must be a string not {type(name)}")
+    @name.deleter
+    def name(self):
+        print("Deleting name ......")
+        """delete a dogs name."""
+        del self._name
+dog2=Dog2("Fido")
+#del dog2.name
+dog2.name
