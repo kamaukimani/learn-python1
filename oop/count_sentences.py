@@ -36,3 +36,4 @@ class MyString:
 
 string=MyString("This is a string! It has three sentences. Right?")
 string.count_sentences()
+del string.value
