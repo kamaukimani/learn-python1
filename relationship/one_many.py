@@ -45,9 +45,11 @@ class Teacher:
         student.teacher = self
 
 student=Student("Alice",20)
+student1=Student("John",23)
 teacher=Teacher("Bob")
 student.teacher=teacher  #either have this
 print(student.teacher.name)
-teacher.add_students(student)  #or this
+teacher.add_students(student) 
+teacher.add_students(student1) #or this
 for student in teacher.students():
     print(student.name,student.age)
