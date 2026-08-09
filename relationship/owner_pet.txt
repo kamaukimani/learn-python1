@@ -1,0 +1,3 @@
+Fido of type dog has been successfully created 
+Smalla of type cat has been successfully created 
+Parot of type bird has been successfully created 
