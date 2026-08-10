@@ -1,0 +1,16 @@
+Student:Doe has been created || Total student instances: 1
+Student:Joan has been created || Total student instances: 2
+Student:Doe has been created || Total student instances: 1
+Student:Joan has been created || Total student instances: 2
+Student:Doe has been created || Total student instances: 1
+Student:Joan has been created || Total student instances: 2
+Student:Doe has been created || Total student instances: 1
+Student:Joan has been created || Total student instances: 2
+Student:Doe has been created || Total student instances: 1
+Student:Joan has been created || Total student instances: 2
+Student:Doe has been created || Total student instances: 1
+Student:Joan has been created || Total student instances: 2
+Student:Doe has been created || Total student instances: 1
+Student:Joan has been created || Total student instances: 2
+Student:Doe has been created || Total student instances: 1
+Student:Joan has been created || Total student instances: 2
