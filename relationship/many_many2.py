@@ -7,6 +7,7 @@ class Author:
     all=[]
     def __init__(self,name):
         self.name=name
+        self.log_author(name)
         Author.all.append(self)
     def contracts(self):
         return [contract for contract in Contract.all if contract.author == self]
@@ -16,23 +17,38 @@ class Author:
         return Contract(self,book,date,royalties)
     def total_royalties(self):
         return sum([contract.royalties for contract in self.contracts()])
+    def log_author(self,name):
+        with open("athor.txt","a") as file:
+            file.write(f"{self.name} created at {datetime.now().time()} \n")
 
 class Book:
     all=[]
+    books_count=0
     def __init__(self,title):
         self.title=title
+        self.increase_books()
+        self.log_book(title)
         Book.all.append(self)
     def contracts(self):
         return [contract for contract in Contract.all if contract.book == self]
     def authors(self):
         return [contract.author for contract in self.contracts()]
+    @classmethod
+    def increase_books(cls):
+        cls.books_count +=1
+    def log_book(self,title):
+        with open("book.txt","a") as file:
+            file.write(f"{self.title} created.Total books are:{Book.books_count} \n")
 class Contract:
     all=[]
+    contract_count=0
     def __init__(self,author,book,date,royalties):
         self.author=author
         self.book=book
         self.date=date
         self.royalties=royalties
+        self.increase_contracts()
+        self.log_contract()
         Contract.all.append(self)
     @property
     def author(self):
@@ -69,6 +85,12 @@ class Contract:
     @classmethod
     def contracts_by_date(cls,date):
         return [contract for contract in cls.all if contract.date == date]
+    @classmethod
+    def increase_contracts(cls):
+        cls.contract_count +=1
+    def log_contract(self):
+        with open("contract.txt","a") as file:
+            file.write(f"The total number of contracts signed is: {Contract.contract_count} \n")
 
 author1=Author("Guido")
 author2=Author("Rossum")
