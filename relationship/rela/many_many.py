@@ -1,0 +1,1 @@
+print("Working on aggregate methods with a many-to-many relationship using an intermediary class")
